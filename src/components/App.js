@@ -1,4 +1,6 @@
 import './App.css';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
 
 function App() {
   return (
@@ -7,15 +9,13 @@ function App() {
         <h1>
           Calculator
         </h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body>
+        <>
+          <Display />
+          <ButtonPanel />
+        </>
+      </body>
     </div>
   );
 }
