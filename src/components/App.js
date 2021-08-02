@@ -9,12 +9,10 @@ function App() {
           Calculator
         </h1>
       </header>
-      <body>
-        <>
-          <Display />
-          <ButtonPanel />
-        </>
-      </body>
+      <>
+        <Display />
+        <ButtonPanel />
+      </>
     </div>
   );
 }
