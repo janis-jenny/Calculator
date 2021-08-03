@@ -4,7 +4,7 @@ const operate = (numberOne, numberTwo, operation) => {
   let result = Big(0);
   const a = Big(numberOne);
   const b = Big(numberTwo);
-  
+
   switch (operation) {
     case '+':
       result = a.plus(b);
@@ -18,19 +18,19 @@ const operate = (numberOne, numberTwo, operation) => {
       result = a.times(b);
       break;
 
+    case '/':
+      result = a.div(b);
+      break;
+
     case '%':
       result = a.div(100);
       break;
-    
-    case '/':
-    result = a.div(b);
-    break;
 
     default:
-    result = a;
-    break;
+      result = a;
+      break;
   }
-  return result;
+  return toString(result);
 };
 
 export default operate;
