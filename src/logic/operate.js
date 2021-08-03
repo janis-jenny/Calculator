@@ -23,12 +23,11 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     case '%':
-      result = a.div(100);
+      result = a.mod(100);
       break;
 
     default:
-      result = a;
-      break;
+      throw Error(`Unknown operation '${operation}'`);
   }
   return toString(result);
 };
