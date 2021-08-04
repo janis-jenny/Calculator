@@ -19,6 +19,9 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     case '/':
+      if (b.eq(0)) {
+        return 'MathError';
+      }
       result = a.div(b);
       break;
 
@@ -29,7 +32,7 @@ const operate = (numberOne, numberTwo, operation) => {
     default:
       throw Error(`Unknown operation '${operation}'`);
   }
-  return toString(result);
+  return result.toString();
 };
 
 export default operate;
