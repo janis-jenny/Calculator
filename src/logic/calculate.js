@@ -1,8 +1,7 @@
 import operate from './operate';
 
 const calculate = (data, btnName) => {
-  let { total, next } = data;
-  const { operation } = data;
+  let { total, next, operation } = data;
 
   // Multiply by -1, the lastly typed number
   if (btnName === '+/-') {
@@ -26,9 +25,10 @@ const calculate = (data, btnName) => {
     case '-':
     case 'X':
     case '/':
-    case '=':
+    // case '=':
       if (total && next) {
         total = operate(total, next, operation);
+        next = null;
       } else {
         total = next;
         next = null;
@@ -41,8 +41,16 @@ const calculate = (data, btnName) => {
         total = operate(total, 0, btnName);
       }
       break;
+    /* case '=':
+      if (total && next) {
+        operation = btnName;
+      } else {
+        total = next;
+        operation = btnName;
+      }
+      break; */
     default:
-      next += btnName;
+      next = next ? next += btnName : btnName;
   }
 
   return { total, next, operation };
