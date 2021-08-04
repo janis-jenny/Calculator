@@ -12,6 +12,11 @@ class App extends Component {
       next: null,
       operation: null,
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(btnName) {
+    this.setState((prevState) => calculate(prevState, btnName));
   }
 
   render() {
