@@ -29,7 +29,7 @@ class App extends Component {
         </header>
         <>
           <Display />
-          <ButtonPanel />
+          <ButtonPanel clickHandler={this.handleClick} />
         </>
       </div>
     );
