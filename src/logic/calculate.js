@@ -3,13 +3,14 @@
 /* eslint-disable no-else-return */
 /* eslint-disable no-fallthrough */
 /* eslint-disable indent */
-import operate from './operate';
+/* import Big from 'big.js';
+import operate from './operate'; */
 
 const calculate = (data, btnName) => {
   // eslint-disable-next-line no-console
   console.log(data);
-  let { total, next } = data;
-  const { operation } = data;
+  const { total, next, operation } = data;
+  // const { operation } = data;
 
   // Multiply by -1, the lastly typed number
   if (btnName === '+/-') {
@@ -21,6 +22,7 @@ const calculate = (data, btnName) => {
   if (btnName === '.') {
     if (!next) return { total: `${total}${btnName}`, next, operation };
     if (!total) return { total, next: `${next}${btnName}`, operation };
+    // if (!total) return { total: `${'0'}${btnName}`, next, operation };
   }
 
   // Reset all values if AC is clicked or the result/total is an error
@@ -28,20 +30,38 @@ const calculate = (data, btnName) => {
     return { total: null, next: null, operation: null };
   }
 
-  switch (btnName) {
+  /* switch (btnName) {
     case '+':
     case '-':
     case 'X':
     case '/':
+      operation = btnName;
+      total = next;
+      next = null;
     case '=':
-      if (total && next) {
-        total = operate(total, next, operation);
-      } else {
+
+      /* if (!operation && total && next) {
+        total = Big(next).toString();
+      } else if (!total && !next && btnName !== '=') {
+        total = '0';
+      } else if (!total) {
         total = next;
-        next = null;
+      } else if (!next) {
+        total = operate(total, next, operation);
       }
-      break;
-    case '1':
+      if (btnName === '=') {
+        operation = null;
+      } else {
+        operation = btnName;
+      }
+      next = null;
+      break; */
+
+    /*   if (operation) {
+        total = operate(total, next, btnName);
+        return { total, next, operation };
+      } */
+    /* case '1':
     case '2':
     case '3':
     case '4':
@@ -78,10 +98,9 @@ const calculate = (data, btnName) => {
         total = next;
         next = null;
       }
-      break; */
     default:
       return data;
-  }
+  } */
 
   return { total, next, operation };
 };
