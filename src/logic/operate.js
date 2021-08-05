@@ -30,8 +30,9 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     default:
-      throw Error(`Unknown operation '${operation}'`);
+      break;
   }
+
   return result.toString();
 };
 

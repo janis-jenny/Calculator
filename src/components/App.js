@@ -17,9 +17,9 @@ class App extends Component {
   }
 
   handleClick(btnName) {
-    // const newState = calculate(this.state, btnName);
-    // this.setState(newState);
-    this.setState((prevState) => calculate(prevState, btnName));
+    const newState = calculate(this.state, btnName);
+    this.setState(newState);
+    // this.setState((prevState) => calculate(prevState, btnName));
     // eslint-disable-next-line no-console
     console.log('I was clicked');
   }
@@ -29,10 +29,10 @@ class App extends Component {
     let result;
     if (!total && !next) {
       result = '0';
-    } else if (!total) {
-      result = next;
-    } else {
+    } else if (!next) {
       result = total;
+    } else {
+      result = next;
     }
 
     return (
