@@ -1,14 +1,9 @@
-/* eslint-disable no-console */
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let result = Big(0);
   const a = Big(numberOne);
-  console.log(operation);
-  console.log('1', numberOne);
-  console.log('2', numberTwo);
   const b = Big(numberTwo);
-  console.log('b', b);
 
   switch (operation) {
     case '+':
