@@ -63,7 +63,7 @@ class App extends Component {
       case '+':
       case '-':
       case 'X':
-      case '/': {
+      case '÷': {
         // when i click +, operation is now set to +
         const newOp = btnName;
         const newState = { ...this.state, operation: newOp };

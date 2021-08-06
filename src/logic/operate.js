@@ -23,7 +23,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = a.times(b);
       break;
 
-    case '/':
+    case '÷':
       if (b.eq(0)) {
         return 'MathError';
       }

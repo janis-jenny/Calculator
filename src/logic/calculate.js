@@ -20,9 +20,11 @@ const calculate = (data, btnName) => {
 
   // Add a dot at the end of the recently typed number
   if (btnName === '.') {
+    if (!next && !total) return { total, next: `${0}${btnName}`, operation };
     if (!next) return { total: `${total}${btnName}`, next, operation };
     if (!total) return { total, next: `${next}${btnName}`, operation };
-    // if (next) return { total, next: `${0}${btnName}`, operation };
+    if (operation && total && (next !== '0' || next === '0')) return { total, next: `${next}${btnName}`, operation };
+    
   }
 
   // Reset all values if AC is clicked or the result/total is an error
