@@ -57,7 +57,6 @@ class App extends Component {
           const total = next;
           const newState = { total, next: btnName };
           this.setState(newState);
-          console.log(this.setState);
         }
         break;
       case '+':
@@ -81,7 +80,13 @@ class App extends Component {
         this.setState(newState);
       }
         break;
-      case '%':
+      case '%': {
+        const newOp = btnName;
+        const newTotal = operate(next, 0, '%');
+        const newState = { total: newTotal, next: null, operation: newOp };
+        this.setState(newState);
+      }
+        break;
       case '=': {
         const result = operate(total, next, operation);
         const newState = { total: result, next: null, operation: null };
@@ -93,9 +98,9 @@ class App extends Component {
     }
     /* 12
     { total =null, next = 12, operation =null }
-    +
+    %
     { total = 12, next = null, operation = '+' }
-    8
+    100
     { total = 12, next = 8, operation = '+' }
     =
     { total = 20, next = null, operation = null } */

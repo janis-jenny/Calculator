@@ -2,7 +2,6 @@ const calculate = (data, btnName) => {
   // eslint-disable-next-line no-console
   console.log(data);
   const { total, next, operation } = data;
-  // const { operation } = data;
 
   // Multiply by -1, the lastly typed number
   if (btnName === '+/-') {

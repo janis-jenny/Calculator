@@ -31,7 +31,7 @@ const operate = (numberOne, numberTwo, operation) => {
       break;
 
     case '%':
-      result = a.mod(100);
+      result = a.div(100);
       break;
 
     default:
