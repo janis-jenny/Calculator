@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       total: null,
-      next: null,
+      next: '0',
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -56,8 +56,9 @@ class App extends Component {
           console.log(this.state);
           const total = next;
           const newNext = null;
-          const newState = { ...this.state, total, next: newNext };
+          const newState = { total, next: newNext };
           this.setState(newState);
+          console.log(this.setState);
         }
         break;
       case '+':
@@ -68,7 +69,7 @@ class App extends Component {
         const newOp = btnName;
         const newState = { ...this.state, operation: newOp };
         this.setState(newState);
-        break;
+        return;
         // if i have total and next
         // if i have only total
         // if i have only next
