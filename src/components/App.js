@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
-// eslint-disable-next-line react/no-unused-state
 import calculate from '../logic/calculate';
 import operate from '../logic/operate';
 
@@ -17,14 +16,6 @@ class App extends Component {
   }
 
   handleClick(btnName) {
-    /*  // if btnName is a number and operation and total are null then concatenate btnName to next
-    const newState = calculate(this.state, btnName);
-    this.setState(newState);
-    // this.setState((prevState) => calculate(prevState, btnName));
-    // eslint-disable-next-line no-console
-    console.log('I was clicked'); */
-    // console.log(this.state);
-    // let { next } = this.state;
     const { next, total, operation } = this.state;
 
     switch (btnName) {
@@ -39,21 +30,18 @@ class App extends Component {
       case '9':
       case '0':
         if (!total && !operation) {
-          console.log(this.state);
           const newNext = next ? `${next}${btnName}` : btnName;
           const newState = { ...this.state, next: newNext };
           this.setState(newState);
           return;
         }
         if (total && operation) {
-          console.log(this.state);
           const newNext = next ? `${next}${btnName}` : btnName;
           const newState = { ...this.state, next: newNext };
           this.setState(newState);
           return;
         }
         if (operation) {
-          console.log(this.state);
           const total = next;
           const newState = { total, next: btnName };
           this.setState(newState);
@@ -68,10 +56,6 @@ class App extends Component {
         const newState = { ...this.state, operation: newOp };
         this.setState(newState);
         return;
-        // if i have total and next
-        // if i have only total
-        // if i have only next
-        // if i dont have total and next
       }
       case '+/-':
       case '.':
@@ -96,15 +80,6 @@ class App extends Component {
       default:
         break;
     }
-    /* 12
-    { total =null, next = 12, operation =null }
-    %
-    { total = 12, next = null, operation = '+' }
-    100
-    { total = 12, next = 8, operation = '+' }
-    =
-    { total = 20, next = null, operation = null } */
-    // if (btnName = '1') return {total: null, next: }
   }
 
   render() {
