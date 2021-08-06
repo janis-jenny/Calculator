@@ -1,11 +1,3 @@
-/* eslint-disable padded-blocks */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-else-return */
-/* eslint-disable no-fallthrough */
-/* eslint-disable indent */
-/* import Big from 'big.js';
-import operate from './operate'; */
-
 const calculate = (data, btnName) => {
   // eslint-disable-next-line no-console
   console.log(data);
@@ -24,7 +16,6 @@ const calculate = (data, btnName) => {
     if (!next) return { total: `${total}${btnName}`, next, operation };
     if (!total) return { total, next: `${next}${btnName}`, operation };
     if (operation && total && (next !== '0' || next === '0')) return { total, next: `${next}${btnName}`, operation };
-    
   }
 
   // Reset all values if AC is clicked or the result/total is an error
@@ -58,12 +49,11 @@ const calculate = (data, btnName) => {
       }
       next = null;
       break; */
-
-    /*   if (operation) {
+  /* if (operation) {
         total = operate(total, next, btnName);
         return { total, next, operation };
       } */
-    /* case '1':
+  /* case '1':
     case '2':
     case '3':
     case '4':
@@ -74,7 +64,6 @@ const calculate = (data, btnName) => {
     case '9':
     case '0':
       if (!total) return { total: btnName, next, operation };
-      
       if (!operation) {
         total += btnName;
         return { total, next, operation };
@@ -93,7 +82,7 @@ const calculate = (data, btnName) => {
         total = operate(total, 0, btnName);
       }
       break; */
-    /*  case '=':
+  /*  case '=':
       if (total && next) {
         total = operate(total, next, operation);
       } else {
