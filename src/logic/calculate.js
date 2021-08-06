@@ -22,7 +22,7 @@ const calculate = (data, btnName) => {
   if (btnName === '.') {
     if (!next) return { total: `${total}${btnName}`, next, operation };
     if (!total) return { total, next: `${next}${btnName}`, operation };
-    if (next === '0') return { total, next: `${0}${btnName}`, operation };
+    // if (next) return { total, next: `${0}${btnName}`, operation };
   }
 
   // Reset all values if AC is clicked or the result/total is an error

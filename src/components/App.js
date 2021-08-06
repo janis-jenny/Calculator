@@ -10,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       total: null,
-      next: '0',
+      next: null,
       operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -55,8 +55,7 @@ class App extends Component {
         if (operation) {
           console.log(this.state);
           const total = next;
-          const newNext = null;
-          const newState = { total, next: newNext };
+          const newState = { total, next: btnName };
           this.setState(newState);
           console.log(this.setState);
         }
