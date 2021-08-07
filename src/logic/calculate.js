@@ -43,8 +43,7 @@ const calculate = (data, btnName) => {
       }
       if (operation) {
         const newTotal = next;
-        const newNext = next ? `${next}${btnName}` : btnName;
-        return { total: newTotal, next: newNext, operation: btnName };
+        return { total: newTotal, next: btnName, operation };
       }
       break;
     case '+':
