@@ -1,8 +1,10 @@
+/* eslint-disable no-unreachable */
 import operate from './operate';
 
 const calculate = (data, btnName) => {
   // eslint-disable-next-line no-console
   console.log(data);
+  // let { total, next } = data;
   const { total, next, operation } = data;
 
   // Multiply by -1, the lastly typed number
@@ -37,20 +39,16 @@ const calculate = (data, btnName) => {
     case '0':
       if (!total && !operation) {
         const newNext = next ? `${next}${btnName}` : btnName;
-        const newState = { ...this.state, next: newNext };
-        this.setState(newState);
-        return;
+        return { total, next: newNext, operation };
       }
       if (total && operation) {
         const newNext = next ? `${next}${btnName}` : btnName;
-        const newState = { ...this.state, next: newNext };
-        this.setState(newState);
-        return;
+        return { total, next: newNext, operation };
       }
       if (operation) {
-        const total = next;
-        const newState = { total, next: btnName };
-        this.setState(newState);
+        const newTotal = next;
+        const newNext = next ? `${next}${btnName}` : btnName;
+        return { total: newTotal, next: newNext, operation: btnName };
       }
       break;
     case '+':
@@ -59,32 +57,19 @@ const calculate = (data, btnName) => {
     case '÷': {
       // when i click +, operation is now set to +
       const newOp = btnName;
-      const newState = { ...this.state, operation: newOp };
-      this.setState(newState);
-      return;
+      return { total, next, operation: newOp };
     }
-    case '+/-':
-    case '.':
-    case 'AC': {
-      const newState = calculate(this.state, btnName);
-      this.setState(newState);
-    }
-      break;
     case '%': {
       const newOp = btnName;
       const newTotal = operate(next, 0, '%');
-      const newState = { total: newTotal, next: null, operation: newOp };
-      this.setState(newState);
+      return { total: newTotal, next: null, operation: newOp };
     }
-      break;
     case '=': {
       const result = operate(total, next, operation);
-      const newState = { total: result, next: null, operation: null };
-      this.setState(newState);
+      return { total: result, next: null, operation: null };
     }
-      break;
     default:
-      break;
+      return data;
   }
   return { total, next, operation };
 };
