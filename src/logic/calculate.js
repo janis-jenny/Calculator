@@ -1,10 +1,6 @@
-/* eslint-disable no-unreachable */
 import operate from './operate';
 
 const calculate = (data, btnName) => {
-  // eslint-disable-next-line no-console
-  console.log(data);
-  // let { total, next } = data;
   const { total, next, operation } = data;
 
   // Multiply by -1, the lastly typed number
@@ -55,7 +51,6 @@ const calculate = (data, btnName) => {
     case '-':
     case 'X':
     case '÷': {
-      // when i click +, operation is now set to +
       const newOp = btnName;
       return { total, next, operation: newOp };
     }
