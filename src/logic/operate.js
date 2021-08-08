@@ -18,18 +18,22 @@ const operate = (numberOne, numberTwo, operation) => {
       result = a.times(b);
       break;
 
-    case '/':
+    case '÷':
+      if (b.eq(0)) {
+        return 'MathError';
+      }
       result = a.div(b);
       break;
 
     case '%':
-      result = a.mod(100);
+      result = a.div(100);
       break;
 
     default:
-      throw Error(`Unknown operation '${operation}'`);
+      break;
   }
-  return toString(result);
+
+  return result.toString();
 };
 
 export default operate;
