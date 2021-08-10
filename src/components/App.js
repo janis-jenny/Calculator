@@ -1,49 +1,44 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import calculate from '../logic/calculate';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
+const App = () => {
+  const [status, setStatus] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+
+  const handleClick = (btnName) => {
+    /*  const newState = calculate(status, btnName);
+    setStatus(newState); */
+    setStatus((prevState) => calculate(prevState, btnName));
+  };
+
+  const { total, next } = status;
+  let result;
+  if (!total && !next) {
+    result = '0';
+  } else if (!next) {
+    result = total;
+  } else {
+    result = next;
   }
 
-  handleClick(btnName) {
-    const newState = calculate(this.state, btnName);
-    this.setState(newState);
-  }
-
-  render() {
-    const { total, next } = this.state;
-    let result;
-    if (!total && !next) {
-      result = '0';
-    } else if (!next) {
-      result = total;
-    } else {
-      result = next;
-    }
-
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>
-            Calculator
-          </h1>
-        </header>
-        <>
-          <Display result={result} />
-          <ButtonPanel clickHandler={this.handleClick} />
-        </>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>
+          Calculator
+        </h1>
+      </header>
+      <>
+        <Display result={result} />
+        <ButtonPanel clickHandler={handleClick} />
+      </>
+    </div>
+  );
+};
 
 export default App;
