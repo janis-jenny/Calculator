@@ -11,8 +11,6 @@ const App = () => {
   });
 
   const handleClick = (btnName) => {
-    /*  const newState = calculate(status, btnName);
-    setStatus(newState); */
     setStatus((prevState) => calculate(prevState, btnName));
   };
 
