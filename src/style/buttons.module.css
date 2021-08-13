@@ -1,0 +1,50 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat (4, 1fr);
+  gap: 10px;
+}
+
+.lastRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.button {
+  border-radius: 50%;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 1.6rem;
+  width: 50px;
+  height: 45px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin: 0 0.3rem;
+}
+
+.equal {
+  grid-column: 3 / span 2;
+  width: 110px;
+  height: 45px;
+  border-radius: 27px;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 1.6rem;
+  background-color: #f4296a;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-left: 0.2rem;
+}
+
+.orange {
+  background-color: #fd7929;
+}
+
+.white {
+  background-color: #fff;
+  color: #f4296a;
+}

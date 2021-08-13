@@ -1,0 +1,11 @@
+.display {
+  display: grid;
+  grid-template-columns: repeat (4, 1fr);
+  grid-column: 1 / -1;
+  text-align: right;
+  font-size: 2rem;
+  color: aliceblue;
+  width: 98%;
+  padding: 2rem 0.7rem 1.3rem;
+  overflow: hidden;
+}

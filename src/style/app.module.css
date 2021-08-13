@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2em;
+  width: 24%;
+  border-radius: 1.2rem;
+  margin-left: 28.5rem;
+  margin-top: 3rem;
+  background: linear-gradient(45deg, #171A58 0%, #1B1E5C 48%, #424A7B 100%);
+  padding: 2.6rem 2rem;
+}

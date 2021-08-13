@@ -31,7 +31,7 @@ const calculate = (data, btnName) => {
     case '+':
     case '-':
     case 'X':
-    case '÷': {
+    case '/': {
       const newOp = btnName;
       return { total, next, operation: newOp };
     }
@@ -48,7 +48,7 @@ const calculate = (data, btnName) => {
       if (!next) return { total: (total * -1).toString(), next, operation };
       if (!total) return { total, next: (next * -1).toString(), operation };
       break;
-    case 'AC':
+    case 'C':
       return { total: null, next: null, operation: null };
     case '.':
       if (!next && !total) return { total, next: `${0}${btnName}`, operation };

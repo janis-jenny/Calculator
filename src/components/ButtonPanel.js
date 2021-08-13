@@ -1,39 +1,42 @@
 import PropTypes from 'prop-types';
 import Button from './Button';
+import buttonStyles from '../style/buttons.module.css';
 
 const ButtonPanel = (props) => {
   const { clickHandler } = props;
 
   return (
     <>
-      <div>
-        <Button name="AC" clickHandler={clickHandler} />
-        <Button name="+/-" clickHandler={clickHandler} />
-        <Button name="%" clickHandler={clickHandler} />
-        <Button name="÷" clickHandler={clickHandler} />
-      </div>
-      <div>
-        <Button name="7" clickHandler={clickHandler} />
-        <Button name="8" clickHandler={clickHandler} />
-        <Button name="9" clickHandler={clickHandler} />
-        <Button name="X" clickHandler={clickHandler} />
-      </div>
-      <div>
-        <Button name="4" clickHandler={clickHandler} />
-        <Button name="5" clickHandler={clickHandler} />
-        <Button name="6" clickHandler={clickHandler} />
-        <Button name="-" clickHandler={clickHandler} />
-      </div>
-      <div>
-        <Button name="1" clickHandler={clickHandler} />
-        <Button name="2" clickHandler={clickHandler} />
-        <Button name="3" clickHandler={clickHandler} />
-        <Button name="+" clickHandler={clickHandler} />
-      </div>
-      <div>
-        <Button name="0" clickHandler={clickHandler} />
-        <Button name="." clickHandler={clickHandler} />
-        <Button name="=" clickHandler={clickHandler} />
+      <div className={buttonStyles.wrapper}>
+        <div className={buttonStyles}>
+          <Button name="C" type={`${buttonStyles.button} ${buttonStyles.white}`} clickHandler={clickHandler} />
+          <Button name="+/-" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+          <Button name="%" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+          <Button name="/" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+        </div>
+        <div className={buttonStyles}>
+          <Button name="7" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="8" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="9" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="X" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+        </div>
+        <div className={buttonStyles}>
+          <Button name="4" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="5" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="6" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="-" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+        </div>
+        <div>
+          <Button name="1" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="2" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="3" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="+" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
+        </div>
+        <div className={buttonStyles.lastRow}>
+          <Button name="." type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="0" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
+          <Button name="=" type={`${buttonStyles.equal}`} clickHandler={clickHandler} />
+        </div>
       </div>
     </>
   );

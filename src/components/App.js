@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import calculate from '../logic/calculate';
+import appStyle from '../style/app.module.css';
 
 const App = () => {
   const [status, setStatus] = useState({
@@ -25,12 +26,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          Calculator
-        </h1>
-      </header>
+    <div className={appStyle.app}>
       <>
         <Display result={result} />
         <ButtonPanel clickHandler={handleClick} />
