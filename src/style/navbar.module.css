@@ -1,0 +1,17 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 12vh;
+  border-bottom: 0.5vh solid rgb(247, 32, 78);
+  color: aliceblue;
+  padding-bottom: 1rem;
+}
+
+.navbar > a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
