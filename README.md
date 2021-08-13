@@ -10,7 +10,7 @@
 <p align="center">
   <strong>Made by Jenny Cárdenas</strong>
   <br>
-  This is a basic calculator created as part of the odin project javascript course. It allows to make basic calculations. for instance, addition, multiplication, etc.
+  This is a basic calculator created as part of the React.js module. I used functional components, hooks, routes, and modules for style. It allows making basic calculations. for instance, addition, multiplication, etc.
 </p>
 
 <p align="center">
@@ -27,9 +27,7 @@
 
 ## 👩🏼‍💻 About Calculator
 
-![screenshot]()
-
-![screenshot]()
+![screenshot](./src/images/myCalculator.gif)
 
 <hr>
 
