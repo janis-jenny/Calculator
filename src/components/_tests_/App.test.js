@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
@@ -39,6 +38,6 @@ describe('App Component', () => {
 
   it('Should render the Calculator page correctly', () => {
     const tree = renderer.create(<App />);
-    expect(tree.toJSON()).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 });
