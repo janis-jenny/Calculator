@@ -2,8 +2,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import buttonPanel from '../ButtonPanel';
-import Button from '../Button';
+import Display from '../Display';
 
 let container = null;
 beforeEach(() => {
@@ -19,14 +18,16 @@ afterEach(() => {
   container = null;
 });
 
-test('1. Panel Rendering', () => {
-  let buttons = document.getElementsByTagName('button');
-  expect(buttons.length).toBe(0);
-  render(<Button clickHandler={() => {}} />, container);
-  buttons = document.getElementsByTagName('button');
-  expect(buttons.length).toBe(1);
+test('1. Display rendering', () => {
+  render(<Display result="12654" />, container);
+  expect(container.textContent).toBe('12654');
 });
 
-test('2. Types for the props', () => {
-  expect(buttonPanel.propTypes.clickHandler).toBe(PropTypes.func.isRequired);
+test('2. Display the default value', () => {
+  render(<Display result={undefined} />, container);
+  expect(container.textContent).toBe('0');
+});
+
+test('3. Types for the props', () => {
+  expect(Display.propTypes.result).toBe(PropTypes.string);
 });
