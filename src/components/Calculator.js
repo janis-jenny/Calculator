@@ -12,25 +12,25 @@ const Calculator = () => {
   });
 
   const handleClick = (btnName) => {
-    setStatus((prevState) => calculate(prevState, btnName));
+    // setStatus((prevState) => calculate(prevState, btnName));
+    const result = calculate(status, btnName);
+    setStatus(result);
   };
 
   const { total, next } = status;
-  let result;
+  /*   let result;
   if (!total && !next) {
     result = '0';
   } else if (!next) {
     result = total;
   } else {
     result = next;
-  }
+  } */
 
   return (
     <div className={appStyle.app}>
-      <>
-        <Display result={result} />
-        <ButtonPanel clickHandler={handleClick} />
-      </>
+      <Display result={next || total || '0'} />
+      <ButtonPanel clickHandler={handleClick} />
     </div>
   );
 };

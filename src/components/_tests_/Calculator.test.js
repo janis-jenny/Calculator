@@ -1,10 +1,13 @@
-import { render } from '@testing-library/react';
-import Calculator from '../Calculator';
+import renderer from 'react-test-renderer';
+import Display from '../Display';
 
-describe('Calculator component', () => {
-  const calculatorComponent = <Calculator />;
-
-  it('Should render successfully the Calculator component', () => {
-    render(calculatorComponent);
+describe('Calculator', () => {
+  it('renders correctly', () => {
+    const tree = renderer.create(
+      <>
+        <Display />
+      </>,
+    );
+    expect(tree).toMatchSnapshot();
   });
 });

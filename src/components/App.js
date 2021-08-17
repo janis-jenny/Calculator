@@ -7,13 +7,13 @@ import Navbar from './Navbar';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Calculator" component={Calculator} />
         <Route exact path="/Quotes" component={Quotes} />
       </Switch>
-    </div>
+    </>
   );
 }

@@ -1,28 +1,14 @@
 /* eslint-disable react/forbid-foreign-prop-types */
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import buttonPanel from '../ButtonPanel';
 import Button from '../Button';
 
-let container = null;
-beforeEach(() => {
-  // setup a DOM element as a render target
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  // cleanup on exiting
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
-
 test('1. Panel Rendering', () => {
   let buttons = document.getElementsByTagName('button');
   expect(buttons.length).toBe(0);
-  render(<Button clickHandler={() => {}} />, container);
+  render(<Button name="foo" type="button" clickHandler={() => {}} />);
   buttons = document.getElementsByTagName('button');
   expect(buttons.length).toBe(1);
 });
