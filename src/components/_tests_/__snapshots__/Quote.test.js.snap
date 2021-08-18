@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quotes renders correctly 1`] = `
+<div>
+  <ul
+    className="list"
+  >
+    <li>
+      “Technology is best when it brings people together.”
+    </li>
+    <li>
+      “Keep going forward because success will come”
+    </li>
+    <li>
+      “Engineering is the closest thing to magic that exists in the world.”
+    </li>
+  </ul>
+</div>
+`;

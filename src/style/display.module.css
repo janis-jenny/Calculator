@@ -1,6 +1,6 @@
 .display {
   display: grid;
-  grid-template-columns: repeat (4, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column: 1 / -1;
   text-align: right;
   font-size: 2rem;
