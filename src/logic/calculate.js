@@ -41,6 +41,7 @@ const calculate = (data, btnName) => {
       return { total: newTotal, next: null, operation: newOp };
     }
     case '=': {
+      if (!total) return { total, next, operation };
       const result = operate(total, next, operation);
       return { total: result, next: null, operation: null };
     }
