@@ -1,7 +1,4 @@
 .display {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column: 1 / -1;
   text-align: right;
   font-size: 2rem;
   color: aliceblue;

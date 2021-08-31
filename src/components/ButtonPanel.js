@@ -6,21 +6,20 @@ const ButtonPanel = (props) => {
   const { clickHandler } = props;
 
   return (
-    // <>
     <div className={buttonStyles.wrapper}>
-      <div className={buttonStyles}>
+      <div>
         <Button name="C" type={`${buttonStyles.button} ${buttonStyles.white}`} clickHandler={clickHandler} />
         <Button name="+/-" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
         <Button name="%" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
         <Button name="/" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
       </div>
-      <div className={buttonStyles}>
+      <div>
         <Button name="7" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
         <Button name="8" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
         <Button name="9" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
         <Button name="X" type={`${buttonStyles.button} ${buttonStyles.orange}`} clickHandler={clickHandler} />
       </div>
-      <div className={buttonStyles}>
+      <div>
         <Button name="4" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
         <Button name="5" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
         <Button name="6" type={`${buttonStyles.button}`} clickHandler={clickHandler} />
@@ -38,7 +37,6 @@ const ButtonPanel = (props) => {
         <Button name="=" type={`${buttonStyles.equal}`} clickHandler={clickHandler} />
       </div>
     </div>
-    // </>
   );
 };
 
